@@ -10,6 +10,7 @@ class MyNavBar extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(25),
       child: GNav(
+
         onTabChange:onTabChange ,
         mainAxisAlignment: MainAxisAlignment.center,
         color: Colors.grey[400],
@@ -21,6 +22,7 @@ class MyNavBar extends StatelessWidget {
           GButton(
             icon: Icons.home_outlined,
             text: 'Shop',
+            
           ),
           GButton(
             icon: Icons.shopping_bag_outlined,
