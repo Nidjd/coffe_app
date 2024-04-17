@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:coffe_app/models/coffe.dart';
+import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
 part 'coffe_state.dart';
@@ -35,10 +36,14 @@ class CoffeCubit extends Cubit<CoffeState> {
   List<Coffe> get coffeShop => _shop;
   List<Coffe> get userCart => _userCart;
 
-  void addItemToTheCart(Coffe coffe) {
+  void addItemToTheCart(Coffe coffe, context) {
     _userCart.add(coffe);
     emit(CoffeAdd());
-    print(_userCart);
+    showDialog(
+        context: context,
+        builder: (context) => const AlertDialog(
+              title: Text("Successfully added to the cart"),
+            ));
   }
 
   void removeItemInCart(Coffe coffe) {

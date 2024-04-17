@@ -46,11 +46,11 @@ class ShopPage extends StatelessWidget {
                         onPressed: () {
                           BlocProvider.of<CoffeCubit>(context).addItemToTheCart(
                             BlocProvider.of<CoffeCubit>(context)
-                                .coffeShop[index],
+                                .coffeShop[index],context
                           );
                         },
                         coffe: BlocProvider.of<CoffeCubit>(context)
-                            .coffeShop[index],
+                            .coffeShop[index], icon: const Icon(Icons.add),
                       ),
                     ),
                     itemCount:
